@@ -1,0 +1,111 @@
+Docker Commands
+================
+#Docker version
+>docker --version
+
+#To see docker info
+>docker info
+
+#To List out available images
+>docker images
+
+#To pull image
+>docker pulll <IMAGE_NAME>
+
+
+###############################
+	Dockerfile
+################################
+|-Dockerfile contains instructions to build docker image
+|-In Dockerfile we will use DSL(Domain Specific Language)keywords
+
+|-Docker engine will process Dockerfile instructions from top to bottom
+
+|-Dockerfile keywords are listed below
+FROM
+MAINTAINER
+COPY
+ADD
+RUN
+CMD
+ENTRYPOINT
+ENV
+LABEL
+USER
+WORKDIR
+EXPOSE
+VOLUME
+
+
+FROM:It indicates base image to run our application. On top of base image we will create our image.
+  Syntax:
+	FROM <IMAGE_NAME>
+Example:
+	FROM java:1.8.0
+	FROM tomcat:9.2
+	FROM mysql
+
+
+MAINTAINER:It represent who is author
+
+EX: MAINTAINER JOHN <john@gmail.com>
+
+
+COPY: 
+|-It is used to copy files/folders to image while creating image
+|-copy command is used to copy files/folder from location to other location while create the image
+
+Syntax:
+	COPY <source> <destination>
+
+
+Examle:
+	#copying war file from target directory to tomcat/webapps directory
+	COPY target/maven-web-app.war /usr/local/tomcat/webapp/maven-web-app.war
+
+ADD:
+|-ADD is also used to copy files to image while creating an image
+|-ADD keyword can download files from remote location(http)
+|-ADD keyword will extract tar file while copying to image
+
+Notes:
+ |-zip files we have to extract manually
+Syntax:
+	ADD <source> <destination>
+	ADD <url-to-download> <destination>
+
+
+Q)What is difference between COPY and ADD?
+
+
+RUN:
+ |-It is used to execute commands on top of base image
+ |-Rum command instructions will execute while creating an image
+
+Example:
+	RUN mkdir workspace
+        RUN  yum install git
+
+
+CMD:
+ |-CMD is also used to execute commands
+ |-CMD instructions will execute while creating a container.
+	
+Example:
+	CMD sudo start tomcat
+
+|-We can write multiple CMD instructions in Dockerfile but Docker will process only last CMD instructions.
+
+
+
+|-Create docker file
+
+FROM ubuntu
+RUN echo "Run One Updated"
+RUN echo "RUN TWO"
+CMD echo "Echo from Image"
+CMD echo "Echo from Latest"
+RUN echo "RUN Three"
+
+
+

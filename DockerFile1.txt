@@ -1,0 +1,129 @@
+Docker
+========
+Application Development
+|-Collection of program is called software project
+
+|-Software project contains several components
+	1)Front end components
+	2)Backend comonents
+	3)Database Components
+
+
+|-In order to deploy our application in a machine we need to setup all the softwares which are required to our   application.
+  EX: OS, java 1.8v,mysql,tomcat etc.
+
+|-In Realtime project should be deployed into multiple environments for testing purpose.
+	Ex: DEV,SIT,UAT,PILOT and PROD
+
+|-DEV env will be used by Devlopers to peform integration testing
+|-SIT env will be used by Testing team to test functionality of the application
+|-UAT env will be used by client to test functionality of the application
+|-PILOT env means pre-prodction testing env
+|-PROD meand live environment
+
+|-To deploy application to these many environments we need to take of all the softwars required to run our  application in all environment. It is very difficult task.
+
+
+
+Virtualization
+==============
+|-Installing Multiple Guest Operating systems in one Host Operating System.
+|-Hypervisior S/W will be used to achieve this
+|-We need to install all the required software in HOST OS to run our application
+|-It is old technique to run the applications
+|-System performance will become slow in this process
+|-To overcome the problems of virutalization we are going for Containerization Concept.
+
+Containerization
+===================
+|-It is used to package all the softwares and application code in one container for execution.
+
+|-Container will take care of everything which is required to run our application
+
+|-We can run the containers in Mutilple machines easily.
+
+|-Docker is a containerization software.
+
+|-Using Docker S/W we will create container for our application.
+
+
+Notes:
+==========
+|-Docker is a containerization software
+|-Docker will take care of application and application dependencies for execution
+|-Deployments into multiple environments will become easy if we use Docker containers concept.
+Docker Architecture
+======================
+|-Docker is a platform for packaging ,deploying and running applications
+
+|-Docker enables you to separate your applications from your infrastructure so you can deliver software  quickly.
+
+|-Docker packages software into standardized units called containers that have everything the software needs to  run including libraries,system tools,code and runtime.
+
+
+|-By taking advantage of Docker's methodologies for shipping,testing and deploying code quickly
+
+
+Docker Architecture
+====================
+              Build                 Run
+Docker File==========>Docker image========>Docker Container
+
+
+
+Docker Terminology
+====================
+1)Dockerfile
+2)Docker Image
+3)Docker Container
+4)Docker Registry
+5)Docker Engine
+
+
+1)Dockerfile:
+ |-Dockerfile contains instructions to create an image.
+ |-It contains Docker Domain Specific keywords to build image.
+
+
+2)Docker Image:
+ |-Docker imange is a package which contains everything(App code+softwares+env+libraries)
+
+3)Docker Container
+ |-Docker Container is run time instance of Docker Image out application will execute in Docker container.
+
+4)Docker Registry
+ |-Docker Registry is a place where we can store our Docker images.
+ |-Docker Hub is a public registry. Everybody can store and retrieve images
+ |-AWS ECR
+
+5)Docker Engine
+ |-Docker Engine is a software using which we will create Docker images and Docker Container
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
